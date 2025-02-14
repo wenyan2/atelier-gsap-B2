@@ -1,5 +1,15 @@
-// GSAP Modules
+// GSAP Modules  ---------------------------------------------------
 gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPlugin);
+
+// GSAP Animations   ---------------------------------------------------
+// GSAP matchedia
+// let mm = gsap.matchMedia();
+// mm.add({
+//     isMoblie: "(max-width: 799px)",
+//     isDesktop: "(max-width: 799px)",
+// }, (context) => {
+//     let (isMoblie.isDesktop) = context.conditions;
+// })
 
 // // GSAP Demo Animation
 // gsap.to("#demo",{
@@ -50,4 +60,23 @@ gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPl
 // .to('#word',{y:100,})
 // .to('#word',{x:-10,})
 // .to('#word',{y:-10,})
+
+
+// // Gsap Draggable - Poke
+// Draggable.create(".hero-img",{
+//     typ:'rotation',
     
+//     onDrag: function(){
+//         document.querySelector('.hero-img').style.width = "250px"; //按这个会变大或变小
+//     },
+//     onDragEnd: function(){
+//         document.querySelector('.hero-img').style.width = "400px"; 
+//         // if (this,hitTest('#depositeZone','180px')) {
+//         //     document.getElementById("depositeZone")
+//         // } else {
+
+//         // }
+//     },
+// })
+
+
