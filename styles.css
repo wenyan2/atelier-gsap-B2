@@ -1,3 +1,149 @@
-#demo{
-    color: red;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5e2c5;
+    text-align: center;
+}
+
+/* Font */
+.kalam-bold {
+    font-family: "Kalam", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #2b2d42;
+    z-index: 1000;
+}
+.header ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+/* .header ul li {
+    display: inline;
+} */
+.header ul li a {
+    text-decoration: none;
+    color: #edf2f4;
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px 50px 50px;
+}
+.hero img {
+    width: 400px;
+}
+.hero-text {
+    flex: 1;
+    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hero-text h1 {
+    font-size: 90px;
+    font-style: italic;
+}
+.hero-text h2 {
+    font-size: 32px;
+    align-self: flex-end;
+}
+.hero-text p {
+    font-size: 15px;
+    align-self: flex-end;
+}
+
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 100px;
+    text-align: left;
+}
+.content p {
+    flex: 1;
+    font-size: 20px;
+    max-width: 50%;
+}
+.content img {
+    width: 300px;
+    border-radius: 10px;
+}
+
+
+.intro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: left;
+    padding-top: 100px;
+}
+.intro img {
+    width: 350px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.intro h1 {
+    font-size: 48px;
+    font-style: italic;
+    font-weight: bold;
+}
+.intro p {
+    font-size: 24px;
+    font-weight: normal;
+}
+
+
+
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+.skills img {
+    width: 80px;
+    margin: 0px 20px;
+}
+
+
+.contact {
+    background-color: white;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+.contact img {
+    width: 120px;
+    border-radius: 10px;
 }
