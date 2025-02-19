@@ -5,7 +5,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5e2c5;
+    background-color: #FFECD1;
     text-align: center;
 }
 
@@ -83,6 +83,18 @@ main {
 }
 .hero-text p {
     font-size: 15px;
+}
+
+
+#illustratorFlower {
+    position: absolute;
+    left: 0px;
+    bottom: 60px;
+}
+.illustratorCrown {
+    position: absolute;
+    left: 380px;
+    top: 70px;
 }
 
 
