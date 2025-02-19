@@ -92,29 +92,56 @@ gsap.from("#name, #school",{
     y:'900px',
     duration: 1.5,
 })
-// let t1 = gsap.timeline({
-//     repeat : 0,
-//     yoyo : true,
+let t1 = gsap.timeline({
+    repeat : 0,
+    yoyo : true,
 
-// })
-// t1.from(".illustratorFlower", {y:'900px', stagger : 1.5,})
-// t1.from(".illustratorCrown", {x:'-900px', stagger : 1.5,})
+})
+t1.from(".illustratorFlower", {y:'900px', stagger : 1.5,})
+t1.from(".illustratorCrown", {x:'-900px', stagger : 1.5,})
 
 gsap.fromTo(".hero-img",
     {opacity:0},
     {opacity: 1,duration: 1},
 )
 
-gsap.to("#illustratorFlower", {
-    ScrollTrigger: {
-        trigger:'.intro',
-        start: 'top 60%',
-        end: 'top 20%',
+// gsap.to("#illustratorFlower", {
+//     ScrollTrigger: {
+//         trigger:'.intro',
+//         start: 'top 60%',
+//         end: 'top 20%',
+//         scrub: 1,
+//         markers: true,
+//         id: "illustratorFlower",
+//         toggleActions: 'play none reverse reset'
+//     },
+//     rotation: 360,
+//     duration: 2,
+// })
+
+gsap.to("#yanwenImage1", {
+    scrollTrigger: {
+        trigger: ".contentWrapper",
         scrub: 1,
-        markers: true,
-        id: "illustratorFlower",
-        toggleActions: 'play none reverse reset'
+        markers:true,
+        toggleActions: "reverse play play reset",
+
+        start: "top 15%",
+        end: "bottom 25%"
     },
-    rotation: 360,
-    duration: 2,
+    y: '465px',
+    x: '-380px',
+})
+
+gsap.to("#yanwenImage2, #yanwenImage3", {
+    opacity: 1,
+    scrollTrigger: {
+        trigger: ".contentWrapper",
+        scrub: 1,
+        markers:true,
+        toggleActions: "reverse play play reset",
+
+        start: "top 15%",
+        end: "bottom 25%"
+    }
 })

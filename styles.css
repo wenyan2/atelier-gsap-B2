@@ -98,21 +98,33 @@ main {
 }
 
 
-.content {
+.contentWrapper {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-top: 100px;
+    padding-top: 50px;
     text-align: left;
 }
-.content p {
+.contentWrapper p {
     flex: 1;
     font-size: 20px;
     max-width: 50%;
 }
-.content img {
-    width: 300px;
+.contentImg {
+    width: 350px;
     border-radius: 10px;
+}
+/* #yanwenImage1 {
+    width: 350px;
+    border-radius: 10px;
+} */
+#yanwenImage2 {
+    margin-right: 250px;
+    opacity: 0;
+}
+#yanwenImage3 {
+    margin-left: 250px;
+    opacity: 0;
 }
 
 
@@ -122,6 +134,7 @@ main {
     align-items: center;
     text-align: left;
     padding-top: 100px;
+    margin-top: 150px;
 }
 .intro img {
     width: 350px;
