@@ -92,32 +92,21 @@ gsap.from("#name, #school",{
     y:'900px',
     duration: 1.5,
 })
-let t1 = gsap.timeline({
-    repeat : 0,
-    yoyo : true,
 
+gsap.from(".illustratorCrown", {
+    x:'-900px', 
+    duration : 1.5,
 })
-t1.from(".illustratorFlower", {y:'900px', stagger : 1.5,})
-t1.from(".illustratorCrown", {x:'-900px', stagger : 1.5,})
 
 gsap.fromTo(".hero-img",
     {opacity:0},
     {opacity: 1,duration: 1},
 )
 
-// gsap.to("#illustratorFlower", {
-//     ScrollTrigger: {
-//         trigger:'.intro',
-//         start: 'top 60%',
-//         end: 'top 20%',
-//         scrub: 1,
-//         markers: true,
-//         id: "illustratorFlower",
-//         toggleActions: 'play none reverse reset'
-//     },
-//     rotation: 360,
-//     duration: 2,
-// })
+gsap.to("#illustratorFlower", {
+    rotation: 360,
+    duration: 2,
+})
 
 gsap.to("#yanwenImage1", {
     scrollTrigger: {
@@ -145,3 +134,33 @@ gsap.to("#yanwenImage2, #yanwenImage3", {
         end: "bottom 25%"
     }
 })
+
+gsap.to("#text", {
+    opacity: 0,
+    scrollTrigger: {
+        trigger: ".intro",
+        scrub: 1,
+        markers:true,
+        toggleActions: "reverse play play reset",
+
+        start: "top 55%",
+        end: "bottom 80%"
+    }
+})
+
+gsap.to(".character", {
+    x: (index) => [ 70, 80, 30, 60, -40 ][index], // 左右散开
+    y: (index) => [ -30, -120, 20, 80, -80][index], // 上下散开
+    opacity: 1,
+    duration: 5,
+    stagger:  gsap.utils.random(0.1, 0.3),
+    ease: "power2.out",
+    scrollTrigger: {
+        trigger: "#characterGroup",
+        start: "top 55%",
+        end: "top 80%",
+        scrub: 3,
+        markers: true,
+        toggleActions: "play none reverse none",
+    }
+});
