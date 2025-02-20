@@ -80,6 +80,7 @@ gsap.registerPlugin(ScrollTrigger,Observer,ScrollToPlugin,Draggable,MotionPathPl
 // })
 
 
+// GSAP Animations Section 1 ---------------------------------------------------
 gsap.from(".text-creative",{
     x:'900px',
     duration: 1.5,
@@ -108,6 +109,8 @@ gsap.to("#illustratorFlower", {
     duration: 2,
 })
 
+
+// GSAP Animations Section 2 ---------------------------------------------------
 gsap.to("#yanwenImage1", {
     scrollTrigger: {
         trigger: ".contentWrapper",
@@ -135,6 +138,8 @@ gsap.to("#yanwenImage2, #yanwenImage3", {
     }
 })
 
+
+// GSAP Animations Section 3 ---------------------------------------------------
 gsap.to("#text", {
     opacity: 0,
     scrollTrigger: {
@@ -160,7 +165,33 @@ gsap.to(".character", {
         start: "top 55%",
         end: "top 80%",
         scrub: 3,
-        markers: true,
         toggleActions: "play none reverse none",
     }
+});
+
+
+// GSAP Animations Section 4 ---------------------------------------------------
+let t1 = gsap.timeline({ paused: true })
+t1.to(".letter", {
+    opacity: 1,
+    duration: 0.5, // 每个字母动画持续 0.5 秒
+    stagger: 0.2, // 每个字母间隔 0.2 秒依次出现
+    ease: "power2.out",
+});
+
+t1.to(".skill", {
+    opacity: 1,
+    y: -50,
+    duration: 1,
+    stagger: 0.3,
+    ease: "power2.out",
+},"+=0.5") // 等文字动画完成后，延迟0.5s再执行动画
+
+ScrollTrigger.create({
+    animation: t1, 
+    trigger: ".skills",
+    start: "top 80%", // 当 h1 进入视口 80% 位置时，播放动画
+    end: "top 50%",
+    onEnter: () => tl.play(), // 滚动到达触发点时播放动画
+    markers: true // 仅用于调试，可删
 });

@@ -9,14 +9,16 @@ body {
     text-align: center;
 }
 
-/* Font */
+
+/* Font -------------------------------------------------------- */
 .kalam-bold {
     font-family: "Kalam", serif;
     font-weight: 700;
     font-style: normal;
 }
 
- /* Header */
+
+ /* Header -------------------------------------------------------- */
 header {
     display: flex;
     justify-content: center;
@@ -45,14 +47,14 @@ header ul li a {
 }
 
 
-/* main */
+/* main -------------------------------------------------------- */
 main {
     width: 85%;
     margin: auto;
     padding: 20px;
 }
 
-/* profille */
+/* Section1 -- profille */
 .hero {
     display: flex;
     align-items: center;
@@ -84,8 +86,6 @@ main {
 .hero-text p {
     font-size: 15px;
 }
-
-
 #illustratorFlower {
     position: absolute;
     left: 0px;
@@ -98,6 +98,7 @@ main {
 }
 
 
+/* Section2 -- contente */
 .contentWrapper {
     display: flex;
     align-items: center;
@@ -124,6 +125,7 @@ main {
 }
 
 
+/* Section3 -- introe */
 .intro {
     display: flex;
     justify-content: space-around;
@@ -160,20 +162,28 @@ main {
 }
 
 
-
+/* Section4 -- skills */
 .skills {
     display: flex;
     justify-content: center;
     flex-direction: column;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 100px;
 }
-.skills img {
+.letter {
+    font-size: 48px;
+    opacity: 0;
+    display: inline-block;
+}
+.skill {
     width: 80px;
     margin: 0px 20px;
+    opacity: 0;
 }
 
 
+
+/* footer -------------------------------------------------------- */
 footer {
     background-color: white;
     padding: 30px 70px;
@@ -198,14 +208,4 @@ footer {
 .contact img {
     width: 350px;
     border-radius: 10px;
-}
-
-
-#imageWrapper {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
 }
