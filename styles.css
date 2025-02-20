@@ -20,7 +20,7 @@ body {
 
 
  /* Header -------------------------------------------------------- */
-header {
+/* header {
     display: flex;
     justify-content: center;
     padding: 20px;
@@ -36,16 +36,16 @@ header ul {
     display: flex;
     justify-content: space-around;
     width: 100%;
-}
+} */
 /* .header ul li {
     display: inline;
 } */
-header ul li a {
+/* header ul li a {
     text-decoration: none;
     color: #edf2f4;
     font-size: 18px;
     scroll-behavior: smooth;
-}
+} */
 
 
 /* main -------------------------------------------------------- */
@@ -92,22 +92,65 @@ main {
     left: 0px;
     bottom: 60px;
 }
-.illustratorCrown {
+#illustratorCrown {
     position: absolute;
     left: 380px;
     top: 70px;
 }
+@media (max-width: 1024px) {
+    .hero {
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 20px;
+    }
+    .hero img {
+        width: 250px;
+    }
+    .hero-text {
+        text-align: center;
+        margin-left: 0;
+    }
+    .hero-text h1 {
+        font-size: 60px; /* 文字缩小 */
+    }
+    .hero-text h2 {
+        font-size: 24px;
+    }
+    .hero-text p {
+        font-size: 14px;
+    }
+    #illustratorFlower {
+        display: none;
+    }
+    #illustratorCrown {
+        width: 100px;
+        position: relative;
+        left: 50px;
+        top: 100px;
+    }
+}
+@media (max-width: 600px) {
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    .hero-text h2 {
+        font-size: 20px;
+    }
+    .hero-text p {
+        font-size: 12px;
+    }
+}
 
 
 /* Section2 -- contente */
-.contentWrapper {
+.contentGroup {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    padding-top: 50px;
+    margin-top: 100px;
     text-align: left;
 }
-.contentWrapper p {
+.contentGroup p {
     flex: 1;
     font-size: 20px;
     max-width: 50%;
@@ -116,13 +159,36 @@ main {
     width: 350px;
     border-radius: 10px;
 }
+.imgGroup {
+    display: flex;
+    justify-content: space-between;
+}
 #yanwenImage2 {
-    margin-right: 250px;
     opacity: 0;
 }
 #yanwenImage3 {
-    margin-left: 250px;
     opacity: 0;
+}
+@media (max-width: 1024px) {
+    .contentGroup {
+        flex-direction: column;
+        text-align: center;
+    }
+    .contentWrapper p {
+        width: 100%; 
+        font-size: 18px;
+    }
+    .contentImg {
+        width: 250px; /* 缩小图片 */
+    }
+    .imgGroup {
+        flex-direction: column;
+        align-items: center;
+        gap: 400px;
+    }
+    #yanwenImage2, #yanwenImage3 {
+        margin-right: 150px 0; /* 让图片垂直排列 */
+    }
 }
 
 
@@ -144,7 +210,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 48px;
     font-weight: bold;
     height: 50vh;
     overflow: hidden;
@@ -158,8 +223,33 @@ main {
     opacity: 1;
 }
 .intro p {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: normal;
+}
+@media (max-width: 1024px) {
+    .intro {
+        flex-direction: column;
+    }
+    .intro img {
+        width: 250px;
+    }
+    .character {
+        font-size: 30px;
+    }
+    .intro p {
+        font-size: 40px;
+    }
+}
+@media (max-width: 600px) {
+    .intro img {
+        margin-bottom: 10px;
+    }
+    .character {
+        font-size: 20px;
+    }
+    .intro p {
+        font-size: 30px;
+    }
 }
 
 
@@ -203,7 +293,35 @@ main {
     margin: 0px 20px;
     opacity: 0;
 }
-/* footer -------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .letter {
+        font-size: 35px;
+    }
+    .skill {
+        width: 60px;
+    }
+    .letterL {
+        font-size: 35px;
+    }
+    .language {
+        font-size: 25px;
+    }
+}
+@media (max-width: 600px) {
+    .letter {
+        font-size: 25px;
+    }
+    .skill {
+        width: 40px;
+        margin: 0px 10px;
+    }
+    .letterL {
+        font-size: 25px;
+    }
+}
+
+
+/* Section 5 -- footer -------------------------------------------------------- */
 footer {
     padding: 50px;
     margin-bottom: 90px;
@@ -221,4 +339,22 @@ footer {
 }
 .contact img {
     width: 80px;
+}
+@media (max-width: 1024px) {
+    .contact {
+        gap: 0;
+    }
+    .contact h2 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+}
+@media (max-width: 600px) {
+    .contact h2 {
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .contact img {
+        width: 30px;
+    }
 }
