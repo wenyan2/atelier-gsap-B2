@@ -6,22 +6,15 @@ gsap.from(".text-creative",{
     x:'900px', // Déplacement depuis la droite
     duration: 1.5,
 })
+
 gsap.from(".text-designer",{
     x:'-1100px', // Déplacement depuis la gauche
     duration: 1.5,
 })
-gsap.from("#name, #school", {
-    y:'900px', // Déplacement vers le haut
-    duration: 1.5,
-})
-gsap.from("#protfolio", {
-    y:'900px', // Déplacement vers le haut
-    duration: 1.5,
-})
 
-gsap.from("#illustratorCrown", {
-    x:'-900px', 
-    duration : 1.5,
+gsap.from("#animatedSec1", {
+    y:'900px', // Déplacement vers le haut
+    duration: 1.5,
 })
 
 gsap.fromTo(".hero-img",
@@ -29,10 +22,11 @@ gsap.fromTo(".hero-img",
     {opacity: 1,duration: 1},
 )
 
-gsap.to("#illustratorFlower", {
-    rotation: 360,
-    duration: 2,
+gsap.from("#illustratorCrown", {
+    x:'-900px', 
+    duration : 1.5,
 })
+
 
 
 // GSAP Animations Section 2 ---------------------------------------------------
@@ -40,7 +34,7 @@ gsap.to("#yanwenImage1", {
     scrollTrigger: {
         trigger: ".contentGroup", // Déclencheur basé sur ".contentGroup"
         scrub: 1, // Animation fluide avec le défilement
-        markers:true, // Affichage des marqueurs pour le débogage
+        // markers:true,
         toggleActions: "reverse play play reset", // Déroulement et réinitialisation
 
         start: "top 15%", // Début de l'animation lorsque ".contentGroup" est à 15% du haut de la vue
@@ -56,7 +50,7 @@ gsap.to("#yanwenImage2, #yanwenImage3", {
     scrollTrigger: {
         trigger: ".contentGroup",
         scrub: 1,
-        markers:true,
+        // markers:true,
         toggleActions: "reverse play play reset",
 
         start: "top 15%",
@@ -77,7 +71,7 @@ mm.add({
         scrollTrigger: {
             trigger: ".contentGroup",
             scrub: 1,
-            markers: true,
+            // markers: true,
             toggleActions: "reverse play play reset",
             start: "top 15%",
             end: "bottom 25%"
@@ -85,7 +79,6 @@ mm.add({
         y: isMobile ? '700px' : isTablet ? '700px' : '465px', // Déplacement ajusté selon l'appareil
         x: isMobile ? '0px' : isTablet ? '0px' : '-380px', 
         duration: 1.5,
-        ease: "power2.out" // Rendre l'animation plus fluide
     });
 });
 
@@ -98,7 +91,7 @@ gsap.to("#text", {
     scrollTrigger: {
         trigger: ".intro",
         scrub: 1,
-        markers:true,
+        // markers:true,
         toggleActions: "reverse play play reset",
 
         start: "top 55%",
@@ -107,11 +100,10 @@ gsap.to("#text", {
 })
 
 gsap.to(".character", {
-    x: (index) => [ 70, 80, 30, 60, -40 ][index], // Déplacement horizontal variable 讲解index的原理
+    x: (index) => [ 70, 80, 30, 60, -40 ][index], // Déplacement horizontal variable    // (index) => {} pour récupérer l'index de l'élément actuel
     y: (index) => [ -30, -120, 20, 80, -80][index], // Déplacement vertical variable
-    opacity: 1,
     duration: 5,
-    stagger:  gsap.utils.random(0.1, 0.3), // Apparition aléatoire 解释random原理
+    stagger:  0.1, 
     ease: "power2.out",
     scrollTrigger: {
         trigger: "#characterGroup",
@@ -128,9 +120,8 @@ gsap.to(".character", {
 let t1 = gsap.timeline({ paused: true })
 t1.to(".letter", {
     opacity: 1,
-    duration: 0.5, // 每个字母动画持续 0.5 秒
-    stagger: 0.2, // 每个字母间隔 0.2 秒依次出现
-    ease: "power2.out", // Rendre l'animation plus fluide.
+    duration: 0.5, // Chaque lettre a une animation d'une durée de 0,5 seconde
+    stagger: 0.2, // Chaque lettre apparaît successivement avec un intervalle de 0,2 seconde
 });
 
 //  Animation des compétences ".skill" qui apparaissent après les lettres
@@ -139,24 +130,22 @@ t1.to(".skill", {
     y: -50,
     duration: 1,
     stagger: 0.3,
-    ease: "power2.out", // Rendre l'animation plus fluide.
-},"+=0.5") // 等文字动画完成后，延迟0.5s再执行动画
+},"+=0.5") // Une fois l'animation du texte terminée, une pause de 0,5 seconde est appliquée avant d'exécuter l'animation suivante
 
 // Déclenchement de l'animation lors du défilement
 ScrollTrigger.create({
     animation: t1, 
     trigger: ".skills",
-    start: "top 80%", // 当 h1 进入视口 80% 位置时，播放动画
+    start: "top 80%", // L'animation se déclenche lorsque le **h1** atteint **80%** de la fenêtre d'affichage
     end: "top 50%",
-    markers: true // 仅用于调试，可删
+    // markers: true
 });
 
 // Apparition des lettres ".letterL" et des langages ".language"
 t1.to(".letterL", {
     opacity: 1,
-    duration: 0.5, // 每个字母动画持续 0.5 秒
-    stagger: 0.2, // 每个字母间隔 0.2 秒依次出现
-    ease: "power2.out",
+    duration: 0.5,
+    stagger: 0.2,
 });
 
 t1.to(".language", {
@@ -164,16 +153,15 @@ t1.to(".language", {
     y: -50,
     duration: 1,
     stagger: 0.3,
-    ease: "power2.out",
-},"+=0.5") // 等文字动画完成后，延迟0.5s再执行动画
+},"+=0.5") 
 
 // Déclenchement lors du défilement
 ScrollTrigger.create({
     animation: t1, 
     trigger: ".languages",
-    start: "top 80%", // 当 h1 进入视口 80% 位置时，播放动画
+    start: "top 80%",
     end: "top 50%",
-    markers: true // 仅用于调试，可删
+    // markers: true
 });
 
 
@@ -183,7 +171,7 @@ gsap.to("#Butterfly", {
     scrollTrigger: {
         trigger: "footer",
         scrub: 1,
-        markers:true,
+        // markers:true,
         toggleActions: "play none reverse nonet",
 
         start: "top 80%",
