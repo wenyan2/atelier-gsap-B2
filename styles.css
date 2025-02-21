@@ -44,7 +44,7 @@ main {
 }
 .hero img {
     width: 400px;
-    transition: 0.25s; /* 改变运动速度*/
+    transition: 0.25s; /* Modifier la vitesse du mouvement */
 }
 .hero-text {
     flex: 1;

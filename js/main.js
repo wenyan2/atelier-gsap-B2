@@ -117,7 +117,7 @@ gsap.to(".character", {
 
 // GSAP Animations Section 4 ---------------------------------------------------
 // Animation des lettres ".letter" qui apparaissent une par une
-let t1 = gsap.timeline({ paused: true })
+let t1 = gsap.timeline()
 t1.to(".letter", {
     opacity: 1,
     duration: 0.5, // Chaque lettre a une animation d'une durée de 0,5 seconde
